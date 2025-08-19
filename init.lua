@@ -27,5 +27,4 @@ vim.opt.clipboard = "unnamedplus" -- sync with system clipboard
 vim.cmd([[colorscheme everforest]])
 
 -- Custom keymaps
-vim.keymap.set("n", "<leader>w", ":w<CR>") -- Space+w = зберегти
-vim.keymap.set("n", "<leader>q", ":q<CR>") -- Space+q = вийти
+vim.keymap.set("n", "<Leader>p", "o<Esc>p") -- Paste below on a new line
