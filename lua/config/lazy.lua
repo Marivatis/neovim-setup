@@ -17,8 +17,5 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup({
-  {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  },
+  { import = "pluggins" },
 })

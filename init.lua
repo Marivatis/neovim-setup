@@ -1,5 +1,10 @@
 -- Leader key. Used to create custom keymaps
+-- Make sure to setup `mapleader` and `maplocalleader` before
+-- loading lazy.nvim so that mappings are correct.
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+require("config.lazy")
 
 -- Basic configuration
 vim.opt.number = true          -- Line numbers
@@ -14,7 +19,9 @@ vim.opt.smartcase = true       -- ...but case-sensitive if uppercase is used
 vim.opt.termguicolors = true   -- Enable 24-bit RGB colors
 vim.opt.clipboard = "unnamedplus"  -- sync with system clipboard
 
+-- Lazy pluggins configuration
+vim.cmd([[colorscheme everforest]])
+
 -- Custom keymaps
 vim.keymap.set("n", "<leader>w", ":w<CR>")  -- Space+w = зберегти
 vim.keymap.set("n", "<leader>q", ":q<CR>")  -- Space+q = вийти
-
