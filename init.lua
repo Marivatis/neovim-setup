@@ -29,6 +29,11 @@ vim.cmd([[colorscheme everforest]])
 -- Custom keymaps
 vim.keymap.set("n", "<Leader>p", "o<Esc>p") -- Paste below on a new line
 
--- Plugin custom keymaps
-vim.keymap.set("n", "<Leader>e", ":Neotree<CR>", { noremap = true, silent = true })        -- Go to neo-tree
-vim.keymap.set("n", "<Leader>E", ":Neotree toggle<CR>", { noremap = true, silent = true }) -- Open/Close neo-tree
+-- Plugin keymaps
+-- Neotree
+vim.keymap.set("n", "<Leader>e", ":Neotree<CR>", { noremap = true, silent = true })                -- Go to neo-tree
+vim.keymap.set("n", "<Leader>E", ":Neotree toggle<CR>", { noremap = true, silent = true })         -- Open/Close neo-tree
+-- Gitsigns
+vim.keymap.set("n", "]c", ":Gitsigns nav_hunk next<CR>", { noremap = true, silent = true })        -- Navigate to next hunk
+vim.keymap.set("n", "[c", ":Gitsigns nav_hunk prev<CR>", { noremap = true, silent = true })        -- Navigate to previous hunk
+vim.keymap.set("n", "<Leader>hp", ":Gitsigns preview_hunk<CR>", { noremap = true, silent = true }) -- Preview current hunk
