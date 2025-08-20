@@ -47,5 +47,15 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
         lazy = false,
-    }
+    },
+
+    -----------------------------------------------
+    -- Git integration pluggins
+    -----------------------------------------------
+    {
+        "lewis6991/gitsigns.nvim",
+    },
+    {
+        "tpope/vim-fugitive",
+    },
 }
