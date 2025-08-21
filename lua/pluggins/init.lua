@@ -62,14 +62,69 @@ return {
     {
         "NeogitOrg/neogit",
         dependencies = {
-            "nvim-lua/plenary.nvim",  -- required
-            "sindrets/diffview.nvim", -- optional - Diff integration
-
-            -- Only one of these is needed.
+            "nvim-lua/plenary.nvim",         -- required
+            "sindrets/diffview.nvim",        -- optional - Diff integration
             "nvim-telescope/telescope.nvim", -- optional
-            "ibhagwan/fzf-lua",              -- optional
-            "echasnovski/mini.pick",         -- optional
-            "folke/snacks.nvim",             -- optional
         },
+    },
+
+    -----------------------------------------------
+    -- Formatting
+    -----------------------------------------------
+    {
+        "nvimtools/none-ls.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvimtools/none-ls-extras.nvim",
+        },
+        ft = "go",
+        opts = function()
+            return require "config.null-ls"
+        end,
+    },
+
+    -----------------------------------------------
+    -- Code autocompletion
+    -----------------------------------------------
+    {
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp", -- LSP completion
+            "hrsh7th/cmp-buffer",   -- buffer words
+            "hrsh7th/cmp-path",     -- filesystem paths
+            "hrsh7th/cmp-cmdline",  -- cmdline completion
+            "hrsh7th/cmp-vsnip",    -- snippets support for vsnip
+            "hrsh7th/vim-vsnip",    -- snippet engine
+        },
+        config = function()
+            local cmp = require("cmp")
+            cmp.setup({
+                snippet = {
+                    expand = function(args)
+                        vim.fn["vsnip#anonymous"](args.body)
+                    end,
+                },
+                mapping = cmp.mapping.preset.insert({
+                    ["<C-Space>"] = cmp.mapping.complete(),
+                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                    ["<Tab>"] = cmp.mapping.select_next_item(),
+                    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+                }),
+                sources = cmp.config.sources({
+                    { name = "nvim_lsp" },
+                    { name = "vsnip" },
+                    { name = "buffer" },
+                    { name = "path" },
+                }),
+            })
+        end,
+    },
+
+    -----------------------------------------------
+    -- Snippets
+    -----------------------------------------------
+    {
+        "rafamadriz/friendly-snippets",
     },
 }
