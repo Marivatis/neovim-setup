@@ -7,6 +7,11 @@ return {
     -----------------------------------------------
     {
         "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("nvim-treesitter.configs").setup({
+                highlight = { enable = true },
+            })
+        end,
         run = ":TSUpdate",
     },
 
@@ -18,7 +23,6 @@ return {
         config = function()
             require("everforest").setup({
                 background = "hard",
-
             })
         end,
         lazy = false,
