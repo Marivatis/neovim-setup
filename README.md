@@ -12,3 +12,8 @@ Feel free to use it, tweak it, or get inspired by it!
 - Git integration with `gitsigns`
 - Completion with `nvim-cmp`
 - Custom keymaps and settings for productivity
+
+## Install
+
+Just clone the repo in your config/nvim folder.
+But make sure to install all code formatters listed in plugins/none-ls.lua.
