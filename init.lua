@@ -4,24 +4,19 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
--- Add nvim default settings
-require("default")
+-- Add default nvim settings and custom keymaps
+require("settings")
+require("keymaps")
 
 -- Add lazy.nvim initializator
 require("config.lazy")
 
+
 -- Add nvim-lspconfig initializator with path "nvim/config/lsp.lua"
 require("config.lsp")
 
-
 -- Lazy pluggins configuration
 vim.cmd([[colorscheme everforest]])
-
--- Custom keymaps
-vim.keymap.set("n", "<Leader>p", "\"+p")       -- Paste from the system register
-vim.keymap.set("n", "<Leader>P", "o<Esc>\"+P") -- Paste the from system register below on a new line
-vim.keymap.set("v", "<Leader>y", "\"+y")       -- Copy to the system register
-vim.keymap.set("n", "<Leader>Y", "\"+yy")      -- Copy the line to the system register
 
 -- Plugin keymaps
 -- Neotree
