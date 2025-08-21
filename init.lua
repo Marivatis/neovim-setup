@@ -11,23 +11,25 @@ require("config.lazy")
 require("config.lsp")
 
 -- Basic nvim configuration
-vim.opt.number = true             -- Line numbers
-vim.opt.relativenumber = true     -- Relative line numbers
-vim.opt.expandtab = true          -- Use spaces instead of tabs
-vim.opt.shiftwidth = 4            -- Indent size = 4 spaces
-vim.opt.tabstop = 4               -- Tab character width = 4
-vim.opt.smartindent = true        -- Smart auto-indentation
-vim.opt.wrap = false              -- Do not wrap long lines
-vim.opt.ignorecase = true         -- Case-insensitive search...
-vim.opt.smartcase = true          -- ...but case-sensitive if uppercase is used
-vim.opt.termguicolors = true      -- Enable 24-bit RGB colors
-vim.opt.clipboard = "unnamedplus" -- sync with system clipboard
+vim.opt.number = true         -- Line numbers
+vim.opt.relativenumber = true -- Relative line numbers
+vim.opt.expandtab = true      -- Use spaces instead of tabs
+vim.opt.shiftwidth = 4        -- Indent size = 4 spaces
+vim.opt.tabstop = 4           -- Tab character width = 4
+vim.opt.smartindent = true    -- Smart auto-indentation
+vim.opt.wrap = false          -- Do not wrap long lines
+vim.opt.ignorecase = true     -- Case-insensitive search...
+vim.opt.smartcase = true      -- ...but case-sensitive if uppercase is used
+vim.opt.termguicolors = true  -- Enable 24-bit RGB colors
 
 -- Lazy pluggins configuration
 vim.cmd([[colorscheme everforest]])
 
 -- Custom keymaps
-vim.keymap.set("n", "<Leader>p", "o<Esc>p") -- Paste below on a new line
+vim.keymap.set("n", "<Leader>p", "\"+p")       -- Paste from the system register
+vim.keymap.set("n", "<Leader>P", "o<Esc>\"+P") -- Paste the from system register below on a new line
+vim.keymap.set("v", "<Leader>y", "\"+y")       -- Copy to the system register
+vim.keymap.set("n", "<Leader>Y", "\"+yy")      -- Copy the line to the system register
 
 -- Plugin keymaps
 -- Neotree
