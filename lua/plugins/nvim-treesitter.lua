@@ -6,12 +6,12 @@ return {
    build = ":TSUpdate",
    dependencies = {
       {
-         "nvim-treesitter/nvim-treesitter-textobjects" -- Syntax aware text-objects
+         "nvim-treesitter/nvim-treesitter-textobjects", -- Syntax aware text-objects
       },
       {
          "nvim-treesitter/nvim-treesitter-context", -- Show code context
-         opts = { enable = true, mode = "topline", line_numbers = true }
-      }
+         opts = { enable = true, mode = "topline", line_numbers = true },
+      },
    },
 
    -- Plugin configuration
@@ -21,8 +21,19 @@ return {
       treesitter.setup({
          -- Add wanted languages support here
          ensure_installed = {
-            "dockerfile", "gitignore", "go", "gomod", "gosum", "gowork",
-            "javascript", "json", "lua", "markdown", "sql", "make", "yaml",
+            "dockerfile",
+            "gitignore",
+            "go",
+            "gomod",
+            "gosum",
+            "gowork",
+            "javascript",
+            "json",
+            "lua",
+            "markdown",
+            "sql",
+            "make",
+            "yaml",
          },
          auto_install = true,
          highlight = { enable = true },

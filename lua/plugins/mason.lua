@@ -4,5 +4,5 @@
 return {
    -- Plugin installation
    "mason-org/mason.nvim",
-   opts = {}
+   opts = {},
 }
