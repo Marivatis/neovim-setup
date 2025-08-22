@@ -7,11 +7,11 @@ return {
    event = "InsertEnter",
    dependencies = {
       "hrsh7th/cmp-nvim-lsp", -- LSP completion
-      "hrsh7th/cmp-buffer",   -- buffer words
-      "hrsh7th/cmp-path",     -- filesystem paths
-      "hrsh7th/cmp-cmdline",  -- cmdline completion
-      "hrsh7th/cmp-vsnip",    -- snippets support for vsnip
-      "hrsh7th/vim-vsnip",    -- snippet engine
+      "hrsh7th/cmp-buffer", -- buffer words
+      "hrsh7th/cmp-path", -- filesystem paths
+      "hrsh7th/cmp-cmdline", -- cmdline completion
+      "hrsh7th/cmp-vsnip", -- snippets support for vsnip
+      "hrsh7th/vim-vsnip", -- snippet engine
    },
 
    -- Plugin configuration
@@ -35,6 +35,9 @@ return {
             { name = "buffer" },
             { name = "path" },
          }),
+         window = {
+            documentation = cmp.config.window.bordered(),
+         },
       })
    end,
 }
