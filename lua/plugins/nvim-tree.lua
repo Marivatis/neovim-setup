@@ -13,6 +13,11 @@ return {
             git_ignored = false,
             dotfiles = false,
          },
+         diagnostics = {
+            enable = true,
+            show_on_dirs = true,
+            show_on_open_dirs = true,
+         },
       })
 
       -- Plugin custom keymaps
