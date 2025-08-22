@@ -1,5 +1,8 @@
 -- Basic nvim settings file
 
+-- Termcolors used by some plugins
+vim.opt.termguicolors = true
+
 -- Clipboard behavior. Set to "unnamed" or "unnamedplus" to use the system clipboard
 vim.opt.clipboard = ""
 
