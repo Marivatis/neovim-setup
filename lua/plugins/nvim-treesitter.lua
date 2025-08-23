@@ -5,9 +5,8 @@ return {
    "nvim-treesitter/nvim-treesitter",
    build = ":TSUpdate",
    dependencies = {
-      {
-         "nvim-treesitter/nvim-treesitter-textobjects", -- Syntax aware text-objects
-      },
+      "nvim-treesitter/nvim-treesitter-textobjects", -- Syntax aware text-objects
+      "nvim-treesitter/playground",
       {
          "nvim-treesitter/nvim-treesitter-context", -- Show code context
          opts = { enable = true, mode = "topline", line_numbers = true },
@@ -38,6 +37,7 @@ return {
          auto_install = true,
          highlight = { enable = true },
          textobjects = { select = { enable = true, lookahead = true } },
+         playground = { enable = true },
       })
    end,
 }
