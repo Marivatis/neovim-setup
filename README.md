@@ -16,4 +16,3 @@ Feel free to use it, tweak it, or get inspired by it!
 ## Install
 
 Just clone the repo in your config/nvim folder.
-But make sure to install all code formatters listed in plugins/none-ls.lua.
