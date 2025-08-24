@@ -3,6 +3,30 @@
 
 return {
    -- Plugin installation
-   "mason-org/mason.nvim",
+   "williamboman/mason.nvim",
+   dependencies = {
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
+   },
    opts = {},
+
+   -- Plugin configuration
+   config = function()
+      require("mason").setup()
+      require("mason-tool-installer").setup({
+         ensure_installed = {
+            lsp = {
+               "gopls",
+               "lua-language-server",
+            },
+            formatters = {
+               "gofumpt",
+               "goimports-reviser",
+               "golines",
+               "stylua",
+            },
+         },
+         auto_update = true,
+         run_on_start = true,
+      })
+   end,
 }
