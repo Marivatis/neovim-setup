@@ -1,7 +1,5 @@
-local lspconfig = require("lspconfig")
-
 -- Setup for gopls language server
-lspconfig.gopls.setup({
+vim.lsp.config("gopls", {
    cmd = { "gopls" },
    filetypes = { "go", "gomod", "gowork", "gotmpl" },
    root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
@@ -19,3 +17,6 @@ lspconfig.gopls.setup({
       },
    },
 })
+
+-- enable the server
+vim.lsp.enable("gopls")

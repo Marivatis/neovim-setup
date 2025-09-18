@@ -1,7 +1,5 @@
-local lspconfig = require("lspconfig")
-
 -- Setup for lua_ls language server
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
    settings = {
       Lua = {
          diagnostics = {
@@ -13,3 +11,6 @@ lspconfig.lua_ls.setup({
       },
    },
 })
+
+-- enable the server
+vim.lsp.enable("lua_ls")
