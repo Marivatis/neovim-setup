@@ -14,16 +14,15 @@ return {
       require("mason").setup()
       require("mason-tool-installer").setup({
          ensure_installed = {
-            lsp = {
-               "gopls",
-               "lua-language-server",
-            },
-            formatters = {
-               "gofumpt",
-               "goimports-reviser",
-               "golines",
-               "stylua",
-            },
+            -- LSP
+            "gopls",
+            "lua-language-server",
+
+            -- Formatters
+            "gofumpt",
+            "goimports-reviser",
+            "golines",
+            "stylua",
          },
          auto_update = true,
          run_on_start = true,
