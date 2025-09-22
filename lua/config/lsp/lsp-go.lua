@@ -2,7 +2,7 @@
 vim.lsp.config("gopls", {
    cmd = { "gopls" },
    filetypes = { "go", "gomod", "gowork", "gotmpl" },
-   root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+   root_dir = vim.lsp.util.root_pattern("go.work", "go.mod", ".git"),
    settings = {
       gopls = {
          gofumpt = true,
