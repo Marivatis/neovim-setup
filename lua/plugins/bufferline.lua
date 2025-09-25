@@ -56,6 +56,6 @@ return {
       vim.keymap.set("n", "<Leader>7", ":BufferLineGoToBuffer 7<CR>")
       vim.keymap.set("n", "<Leader>8", ":BufferLineGoToBuffer 8<CR>")
       vim.keymap.set("n", "<Leader>9", ":BufferLineGoToBuffer 9<CR>")
-      vim.keymap.set("n", "<Leader>$", ":BufferLineGoToBuffer -1<CR>")
+      vim.keymap.set("n", "<Leader>0", ":BufferLineGoToBuffer -1<CR>")
    end,
 }
